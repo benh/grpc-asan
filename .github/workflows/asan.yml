@@ -17,7 +17,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install Dazel
+        run: sudo pip3 install dazel
+
+      # Invoke 'dazel version' in order to build the Docker container
+      # as a separate step so we can track how long it takes and
+      # optimize as necessary.
+      - name: Dazel Docker Build
+        run: dazel version
+
       - name: Run
         run: |
-          bazel run --config=asan :main
-
+          dazel run --config=asan :main

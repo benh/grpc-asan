@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+# This configuration file is effectively a python module loaded by dazel
+
+DAZEL_DOCKERFILE = "Dockerfile"
+DAZEL_DOCKER_BUILD_ARGS = "--target dazel-respect"
+DAZEL_INSTANCE_NAME = "dazel-respect"
+# The image built by dazel will be tagged as
+# f"{DAZEL_REPOSITORY}/{DAZEL_IMAGE_NAME}"
+DAZEL_REPOSITORY = "reboot-dev"
+DAZEL_IMAGE_NAME = "dazel-respect"
